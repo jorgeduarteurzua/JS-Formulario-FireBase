@@ -59,17 +59,13 @@ document.getElementById('formulario').addEventListener('submit', (event) => {
             password: contrasenaEntrada.value
         })
         .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
+            alert('El formulario se ha enviado con éxito', docRef.id)
+             // Limpiamos el formulario
+            document.getElementById('formulario').reset();
         })
         .catch((error) => {
-            console.error("Error adding document: ", error);
+            alert(error)
         });
 
-
-        // Fin llamado Backend
-        alert('El formulario se ha enviado con éxito')
-
-        // Limpiamos el formulario
-        document.getElementById('formulario').reset();
     }
 })
